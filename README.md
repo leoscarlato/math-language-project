@@ -2,7 +2,7 @@
 
 # **{mat}**
 
-POR: Alexandre Magno e Leonardo Scarlato
+**POR: Alexandre Magno e Leonardo Scarlato**
 
 
 **{mat}** consiste em uma linguagem de programação interpretada, com a finalidade de facilitar a escrita em português de operações matemáticas. Nesta linguagem, há palavras reservadas que representam operações que proximam a dialética matemática oral com o código. Assim, proporciando um espaço mais amigavél para estudos de ambas as ciências.
@@ -10,6 +10,62 @@ POR: Alexandre Magno e Leonardo Scarlato
 O público alvo dessa linguagem são de jovens no estágio de desenvolvimento do estudo matemático e de programação.
 
 **{mat}** lidará com números pertencentes ao conjunto dos Racionais(Q). Contudo, na linguagem, trabalha-se com a separação entre inteiros e fracionarios.
+
+### Gramática
+
+```
+
+<program> ::= Prog <declarations> <statements>
+
+<declarations> ::= <declaration> <declarations> |
+                   <declaration>
+
+<declaration> ::= <type> Id = <expr>;
+
+<type> ::= inteiro | fracionario
+
+<statements> ::= <statement> <statements> |
+                 <statement>
+
+<statement> ::= <atrib> |
+                <ifelse> |
+                <while> |
+                <for> |
+                <function> |
+                <callfunction> |
+                <print>
+
+<atrib> ::= Id = <expr> ;
+
+<ifelse> ::= IfElse ( <expr> <comp> <expr> ) { <statements> } Else { <statements> }
+
+<while> ::= While ( <expr> <comp> <expr> ) { <statements> }
+
+<for> ::= For ( <atrib> ; <expr> <comp> <expr> ; <atrib> ) { <statements> }
+
+<function> ::= Function Id ( <param> ) : <statements> 
+
+<callfunction> ::= CallFunction Id ( <param> )
+
+<print> ::= Print ( <expr> )
+
+<expr> ::= <id> |
+           <number> |
+           <binary_op> |
+           <unary_op> |
+           <func_call>
+
+
+<func_call> ::= Id ( <expr> )
+
+<op> ::= + | - | * | / | raiz_de | elevado_a | fatorial | pi
+
+<comp> ::= == | != | < | > | <= | >=
+
+<param> ::= Id |
+            Id , <param>
+
+```
 
 # Tokens
 

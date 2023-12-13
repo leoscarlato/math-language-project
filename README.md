@@ -43,7 +43,7 @@ O público alvo dessa linguagem são de jovens no estágio de desenvolvimento do
 
 <for> ::= For ( <atrib> ; <expr> <comp> <expr> ; <atrib> ) { <statements> }
 
-<function> ::= Function Id ( <param> ) : <statements> 
+<function> ::= Function Id ( <param> ) : <statements> ;
 
 <callfunction> ::= CallFunction Id ( <param> )
 

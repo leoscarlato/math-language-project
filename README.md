@@ -15,12 +15,16 @@ O público alvo dessa linguagem são de jovens no estágio de desenvolvimento do
 
 ```
 
-<program> ::= Prog <declarations> <statements>
+<program> ::= <declarations> <statements>
 
 <declarations> ::= <declaration> <declarations> |
                    <declaration>
 
-<declaration> ::= <type> Id = <expr>;
+<declaration> ::= <type> Id = <expr> |
+                  <type> Id |
+                  <function>
+
+<function> ::= funcao Id ( <param> ) : <expression> ;
 
 <type> ::= inteiro | fracionario
 
@@ -31,39 +35,35 @@ O público alvo dessa linguagem são de jovens no estágio de desenvolvimento do
                 <ifelse> |
                 <while> |
                 <for> |
-                <function> |
-                <callfunction> |
                 <print>
 
 <atrib> ::= Id = <expr> ;
 
-<ifelse> ::= IfElse ( <expr> <comp> <expr> ) { <statements> } Else { <statements> }
+<ifelse> ::= If ( <expr> <comp> <expr> ) { <statements> } Else { <statements> }
 
 <while> ::= While ( <expr> <comp> <expr> ) { <statements> }
 
 <for> ::= For ( <atrib> ; <expr> <comp> <expr> ; <atrib> ) { <statements> }
 
-<function> ::= Function Id ( <param> ) : <statements> ;
-
-<callfunction> ::= CallFunction Id ( <param> )
-
 <print> ::= Print ( <expr> )
 
-<expr> ::= <id> |
+<expr> ::= pi |
+           <id> |
            <number> |
            <binary_op> |
-           <unary_op> |
-           <func_call>
+           <callfunction> |
 
+<callfunction> ::= Id ( <expression> )
 
-<func_call> ::= Id ( <expr> )
-
-<op> ::= + | - | * | / | raiz_de | elevado_a | fatorial | pi
+<binary_op> ::= expression + expression |
+                expression - expression |
+                expression * expression |
+                expression / expression |
+                expression raiz_de expression |
+                expression elevado_a expression |
+                expression fatorial |
 
 <comp> ::= == | != | < | > | <= | >=
-
-<param> ::= Id |
-            Id , <param>
 
 ```
 
